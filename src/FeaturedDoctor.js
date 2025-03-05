@@ -12,7 +12,7 @@ import CallIcon from "@mui/icons-material/Call";
 import { useState } from "react";
 
 const FeaturedDoctor = () => {
-  const [activeDoctor, setActiveDoctor] = useState(0);
+  const [activeDoctor] = useState(null);
 
   const doctors = [
     {
