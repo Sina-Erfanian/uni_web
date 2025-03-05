@@ -12,7 +12,8 @@ import CallIcon from "@mui/icons-material/Call";
 import { useState } from "react";
 
 const FeaturedDoctor = () => {
-  const [activeDoctor] = useState(null);
+  // Set the activeDoctor to 0 or the index of the doctor you want to display
+  const [activeDoctor] = useState(0);
 
   const doctors = [
     {
