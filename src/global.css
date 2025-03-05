@@ -1,18 +1,15 @@
-/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Apply background color to the whole page */
 html,
 body {
-  height: 100%; /* Ensure body takes full height */
-  background-color: #f0f4f8; /* Your desired background color */
-  margin: 0; /* Remove any margin around the body */
+  height: 100%;
+  background-color: #f0f4f8;
+  margin: 0;
 }
 
-/* Make sure the content is centered in the body */
 #root {
-  min-height: 100%; /* Ensure content takes full height */
+  min-height: 100%;
 }

@@ -12,7 +12,6 @@ import CallIcon from "@mui/icons-material/Call";
 import { useState } from "react";
 
 const FeaturedDoctor = () => {
-  // Set the activeDoctor to 0 or the index of the doctor you want to display
   const [activeDoctor] = useState(0);
 
   const doctors = [
@@ -47,7 +46,6 @@ const FeaturedDoctor = () => {
         >
           <MoreHorizIcon />
         </IconButton>
-
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <CardMedia
             component="img"
@@ -67,15 +65,28 @@ const FeaturedDoctor = () => {
               {doctors[activeDoctor].specialty} • {doctors[activeDoctor].years}{" "}
               years
             </Typography>
-            <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
-              <AccessTimeIcon fontSize="small" />
-              <Typography variant="body2" sx={{ ml: 1 }}>
+            <Box
+              sx={{
+                display: "inline-flex",
+                alignItems: "center",
+                mt: 1,
+                backgroundColor: "rgba(255, 255, 255, 0.2)",
+                backdropFilter: "blur(10px)",
+                borderRadius: "20px",
+                padding: "4px 12px",
+                maxWidth: "fit-content",
+              }}
+            >
+              <AccessTimeIcon fontSize="small" sx={{ color: "white" }} />
+              <Typography
+                variant="body2"
+                sx={{ ml: 1, color: "white", fontWeight: 500 }}
+              >
                 Starts in 30 min
               </Typography>
             </Box>
           </Box>
         </Box>
-
         <Typography variant="h6" sx={{ mt: 2 }}>
           ${doctors[activeDoctor].price} / session
         </Typography>

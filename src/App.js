@@ -1,9 +1,9 @@
 import { Container, Box } from "@mui/material";
-import Header from "./Header";
-import FeaturedDoctor from "./FeaturedDoctor";
-import SpecialityFilters from "./SpecialityFilters";
-import DoctorList from "./DoctorList";
-import BottomNav from "./BottomNav";
+import Header from "./components/Header";
+import FeaturedDoctor from "./components/FeaturedDoctor";
+import SpecialityFilters from "./components/SpecialityFilters";
+import DoctorList from "./components/DoctorList";
+import BottomNav from "./components/BottomNav";
 
 function App() {
   return (

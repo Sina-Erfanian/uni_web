@@ -8,7 +8,6 @@ import PersonIcon from "@mui/icons-material/Person";
 
 const BottomNav = () => {
   const [value, setValue] = useState(0);
-
   return (
     <Box
       sx={{
@@ -52,9 +51,10 @@ const BottomNav = () => {
               sx={{
                 backgroundColor: "#007bff",
                 borderRadius: "50%",
-                p: 1,
+                paddingX: 1.2,
+                paddingY: 1,
                 boxShadow: "0 5px 15px rgba(0, 123, 255, 0.4)",
-                transform: "translateY(-10px)",
+                transform: "translateY(-12px)",
                 color: "white",
                 transition: "all 0.3s ease",
                 "&:hover": {
@@ -64,7 +64,9 @@ const BottomNav = () => {
                 },
               }}
             >
-              <CameraAltIcon sx={{ fontSize: 30 }} />
+              <CameraAltIcon
+                sx={{ fontSize: 30, transform: "translateY(2px)" }}
+              />
             </Box>
           }
         />
