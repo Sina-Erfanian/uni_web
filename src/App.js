@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Box } from "@mui/material";
+import Header from "./Header";
+import FeaturedDoctor from "./FeaturedDoctor";
+import SpecialityFilters from "./SpecialityFilters";
+import DoctorList from "./DoctorList";
+import BottomNav from "./BottomNav";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Box sx={{ minHeight: "100vh" }}>
+      <Container
+        maxWidth="sm"
+        sx={{
+          background:
+            "linear-gradient(to bottom, #d0eaff 20%, #eaf4ff 40%, #f8fbff 70%, #ffffff 100%)",
+          pt: 2,
+        }}
+      >
+        <Header />
+        <FeaturedDoctor />
+        <SpecialityFilters />
+        <Box
+          sx={{
+            flexGrow: 1,
+            overflowY: "auto",
+            maxHeight: "50vh",
+            pr: 1,
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <DoctorList />
+        </Box>
+      </Container>
+      <BottomNav />
+    </Box>
   );
 }
 
