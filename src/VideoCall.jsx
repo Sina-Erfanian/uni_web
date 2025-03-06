@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Typography, Paper } from "@mui/material";
 import { Phone, Mic, Videocam } from "@mui/icons-material";
 
@@ -53,14 +53,14 @@ const VideoCall = () => {
       alignItems="center"
       justifyContent="center"
       minHeight="100vh"
-      sx={{ backgroundColor: "#f0f0f0" }}
+      sx={{ backgroundColor: "#f0f0f0", padding: 1 }}
     >
       <Paper
         sx={{
           position: "relative",
           width: "100%",
-          maxWidth: "sm",
-          height: "100vh",
+          maxWidth: 500,
+          height: "90vh",
           overflow: "hidden",
           borderRadius: 2,
           boxShadow: 3,
@@ -78,14 +78,26 @@ const VideoCall = () => {
             left: 10,
             background: "rgba(255, 255, 255, 0.2)",
             backdropFilter: "blur(8px)",
-            padding: "10px 15px",
+            padding: "8px 12px",
             borderRadius: 10,
+            maxWidth: "80%",
           }}
         >
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              fontSize: { xs: "14px", sm: "16px" },
+            }}
+          >
             Dr. Monica Taylor
           </Typography>
-          <Typography variant="body2">{formatTime(timeElapsed)}</Typography>
+          <Typography
+            variant="body2"
+            sx={{ fontSize: { xs: "12px", sm: "14px" } }}
+          >
+            {formatTime(timeElapsed)}
+          </Typography>
         </Box>
         <video
           ref={myVideoRef}
@@ -95,8 +107,10 @@ const VideoCall = () => {
             position: "absolute",
             top: 10,
             right: 10,
-            width: 200,
-            height: 200,
+            width: "30vw",
+            height: "30vh",
+            maxWidth: "120px",
+            maxHeight: "120px",
             borderRadius: 10,
             border: "2px solid white",
             objectFit: "cover",
@@ -106,51 +120,44 @@ const VideoCall = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: 30,
+            bottom: 20,
             left: "50%",
             transform: "translateX(-50%)",
             display: "flex",
             gap: 2,
+            flexWrap: "wrap",
           }}
         >
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "gray",
-              borderRadius: "50%",
-              paddingX: 1,
-              paddingY: 1.8,
-              "&:hover": { backgroundColor: "darkgray" },
-            }}
-          >
-            <Mic sx={{ color: "white" }} />
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "red",
-              paddingX: 1,
-              paddingY: 1.8,
-              borderRadius: "50%",
-              "&:hover": { backgroundColor: "darkred" },
-            }}
-            onClick={() => navigate("/")} // Navigate to home page
-          >
-            <Phone sx={{ color: "white", fontSize: 30 }} />
-          </Button>
-
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "gray",
-              paddingX: 1,
-              paddingY: 1.8,
-              borderRadius: "50%",
-              "&:hover": { backgroundColor: "darkgray" },
-            }}
-          >
-            <Videocam sx={{ color: "white" }} />
-          </Button>
+          {[
+            { icon: <Mic sx={{ color: "white" }} />, bg: "gray" },
+            {
+              icon: <Phone sx={{ color: "white", fontSize: 30 }} />,
+              bg: "red",
+              onClick: () => navigate("/"),
+            },
+            { icon: <Videocam sx={{ color: "white" }} />, bg: "gray" },
+          ].map(({ icon, bg, onClick }, index) => (
+            <Button
+              key={index}
+              variant="contained"
+              onClick={onClick}
+              sx={{
+                backgroundColor: bg,
+                width: 50,
+                height: 50,
+                borderRadius: "50%",
+                minWidth: "auto",
+                "&:hover": {
+                  backgroundColor: bg === "red" ? "darkred" : "darkgray",
+                },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {icon}
+            </Button>
+          ))}
         </Box>
       </Paper>
     </Box>
