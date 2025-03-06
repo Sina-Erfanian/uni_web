@@ -10,9 +10,11 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import CallIcon from "@mui/icons-material/Call";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedDoctor = () => {
   const [activeDoctor] = useState(0);
+  const navigate = useNavigate();
 
   const doctors = [
     {
@@ -23,6 +25,10 @@ const FeaturedDoctor = () => {
       image: "doctor.jpg",
     },
   ];
+
+  const handleJoinCall = () => {
+    navigate("/videocall");
+  };
 
   return (
     <Box sx={{ position: "relative", mt: 3 }}>
@@ -108,6 +114,7 @@ const FeaturedDoctor = () => {
             transition: "all 0.3s ease",
           }}
           startIcon={<CallIcon />}
+          onClick={handleJoinCall}
         >
           Join Call
         </Button>
