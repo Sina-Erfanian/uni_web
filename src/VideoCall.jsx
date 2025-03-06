@@ -52,7 +52,7 @@ const VideoCall = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      minHeight="100vh"
+      minHeight="100dvh"
       sx={{ backgroundColor: "#f0f0f0", padding: 1 }}
     >
       <Paper
