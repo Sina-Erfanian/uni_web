@@ -6,8 +6,13 @@ import {
   Box,
   Rating,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const DoctorList = () => {
+  const navigate = useNavigate();
+  const handleDetails = () => {
+    navigate("/details");
+  };
   const doctors = [
     {
       name: "Dr. Thomas Mitchell",
@@ -69,7 +74,12 @@ const DoctorList = () => {
             borderRadius: 3,
             boxShadow: 1,
             backgroundColor: "white",
+            "&:hover": {
+              transform: "scale(1.02)",
+              cursor: "pointer",
+            },
           }}
+          onClick={handleDetails}
         >
           <CardMedia
             component="img"
