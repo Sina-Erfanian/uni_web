@@ -280,7 +280,6 @@ const DoctorProfile = () => {
               <Tab label="About" />
               <Tab label="Availability" />
               <Tab label="Experience" />
-              <Tab label="Education" />
             </Tabs>
           </Box>
           <Box sx={{ px: 2, mb: 3 }}>
