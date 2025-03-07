@@ -123,7 +123,7 @@ const DoctorProfile = () => {
             </Box>
             <Box sx={{ px: 2, mb: 2 }}>
               <Typography variant="h5" sx={{ fontWeight: "bold", mb: 0.5 }}>
-                Dr. Matthew Thomas
+                Dr.Matthew
               </Typography>
               <Typography
                 variant="body2"
