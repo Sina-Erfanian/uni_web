@@ -242,7 +242,7 @@ const DoctorProfile = () => {
             sx={{
               width: "100%",
               display: "flex",
-              justifyContent: "flex-start",
+              justifyContent: "center",
               ml: 1,
               my: 3,
             }}
