@@ -242,7 +242,8 @@ const DoctorProfile = () => {
             sx={{
               width: "100%",
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "flex-start",
+              ml: 1,
               my: 3,
             }}
           >
@@ -255,7 +256,7 @@ const DoctorProfile = () => {
                 "& .MuiTabs-flexContainer": {
                   backgroundColor: "#f5f5f5",
                   borderRadius: "24px",
-                  padding: "4px",
+                  padding: "3px",
                 },
                 "& .Mui-selected": {
                   backgroundColor: "#fff",
@@ -267,7 +268,7 @@ const DoctorProfile = () => {
                   fontSize: "16px",
                   fontWeight: "600",
                   minWidth: "auto",
-                  padding: "8px 16px",
+                  padding: "6px 14px",
                 },
               }}
               TabIndicatorProps={{
